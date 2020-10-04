@@ -16,13 +16,17 @@ Write-Host `
 
 --- Placer le dossier a la racine du disque et executer. ---
 ----  Place folder on the disk root directory and run.  ----
+
 "
 `
-    Pause
+    # Demander @ l'utilisateur les infos utils
+
+$directoryName = Read-Host -Prompt "Nom de votre projet"
+
 
 # Creation du projet
-mkdir new_project
-Set-Location "./new_project"
+mkdir $directoryName
+Set-Location "./$directoryName"
 mkdir javascript
 mkdir public
 mkdir sass
@@ -33,7 +37,7 @@ mkdir css
 mkdir img
 
 # Sass directory
-Set-Location "/PIS/new_project"
+Set-Location "/PIS/$directoryName"
 Set-Location "./sass"
 mkdir base
 mkdir utils
@@ -56,7 +60,7 @@ New-Item -Path "./utils/_mixins.scss" -ItemType File
 
 # Source files copy
 Set-Location "/PIS"
-Copy-Item "./src_files/index.html" -Destination "./new_project"
-Copy-Item "./src_files/index.js" -Destination "./new_project/javascript"
-Copy-Item "./src_files/main.scss" -Destination "./new_project/sass"
+Copy-Item "./src_files/index.html" -Destination "./$directoryName"
+Copy-Item "./src_files/index.js" -Destination "./$directoryName/javascript"
+Copy-Item "./src_files/main.scss" -Destination "./$directoryName/sass"
 Pause
