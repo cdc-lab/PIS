@@ -27,7 +27,7 @@ $htmlText = '<!DOCTYPE html>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
-    <meta name="author" content="Cdc_429_laB" />
+    <meta name="author" content="YOU" />
     <title>Document</title>
     <link rel="stylesheet" href="public/css/main.css" />
     <script
@@ -44,13 +44,13 @@ $htmlText = '<!DOCTYPE html>
   </body>
 </html>
 '
-$jsText = '// const author = { name: "Cdc_429_laB" };
+$jsText = '// const author = { name: "YOU" };
 
 $(document).ready(function () {
   console.log("Tout commence ici");
 });
 '
-$scssText = '// $author: "Cdc_429_laB";
+$scssText = '// $author: "YOU";
 
 @use "variables"as var;'
 
@@ -67,25 +67,16 @@ if ($directoryDestination.EndsWith("\")) {
 # Creation du projet
 New-Item -Path "$directoryDestination/$directoryName" -ItemType Directory
 Set-Location "$directoryDestination/$directoryName"
-mkdir javascript
-mkdir public
-mkdir sass
+mkdir javascript public sass
 
 # Public directory
 Set-Location "$directoryDestination/$directoryName/public"
-mkdir css
-mkdir img
+mkdir css img
 
 # Sass directory
 Set-Location "$directoryDestination/$directoryName"
 Set-Location "$directoryDestination/$directoryName/sass"
-mkdir base
-mkdir utils
-mkdir layout
-mkdir composants
-mkdir pages
-mkdir themes
-mkdir vendors
+mkdir base utils layout composants pages themes vendors
 
 # Base
 New-Item -Path "./base/_typography.scss" -ItemType File
